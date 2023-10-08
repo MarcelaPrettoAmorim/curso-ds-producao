@@ -1,11 +1,12 @@
 import pickle
+import json
 import pandas as pd
 
-from rossmann.Rossmann import Rossmann
+from rossmann import Rossmann
 from flask import Flask, request, Response
 
 # loading model
-model = pickle.load(open('C:/Users/Usuario/Documents/ds/repos/curso-producao-ds/model/model_rossmann.pkl', 'rb'))
+model = pickle.load(open('/home/marcela-pretto-amorim/ds/repos/curso-ds-producao/model/model_rossmann.pkl', 'rb'))
 
 # initialize API
 app = Flask( __name__ )

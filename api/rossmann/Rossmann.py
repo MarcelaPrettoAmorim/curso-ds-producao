@@ -7,7 +7,7 @@ import pandas as pd
 
 class Rossmann(object):
     def __init__(self):
-        self.home_path = 'C:/Users/Usuario/Documents/ds/repos/curso-producao-ds/'
+        self.home_path = '/home/marcela-pretto-amorim/ds/repos/curso-ds-producao/'
         self.competition_distance_scaler   = pickle.load(open(self.home_path + 'parameter/competition_distance_scaler.pkl', 'rb'))
         self.competition_time_month_scaler = pickle.load(open(self.home_path + 'parameter/competition_time_month_scaler.pkl', 'rb'))
         self.promo_time_week_scaler        = pickle.load(open(self.home_path + 'parameter/promo_time_week_scaler.pkl', 'rb'))
@@ -77,7 +77,7 @@ class Rossmann(object):
         df2['day'] = df2['date'].dt.day
 
         # week of year
-        df2['week_of_year'] = df2['date'].dt.isocalendar().week
+        df2['week_of_year'] = df2['date'].dt.weekofyear
 
         # year week
         df2['year_week'] = df2['date'].dt.strftime('%Y-%W')
