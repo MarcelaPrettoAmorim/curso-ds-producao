@@ -2,7 +2,7 @@ import pickle
 import json
 import pandas as pd
 
-from rossmann import Rossmann
+from rossmann.Rossmann import Rossmann
 from flask import Flask, request, Response
 
 # loading model
@@ -39,7 +39,7 @@ def rossmann_predict():
         return df_response
         
     else:
-        return Responde('{}', status = 200, mimetype = 'application/json')
+        return Response('{}', status = 200, mimetype = 'application/json')
 
 if __name__ == '__main__':
     app.run('localhost') # parâmetro 0.0.0.0 indica que irá rodar na máquina local
